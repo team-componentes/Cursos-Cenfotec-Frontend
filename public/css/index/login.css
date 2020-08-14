@@ -1,0 +1,149 @@
+/* messy css, sorry */
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+body strong {
+  font-weight: 400;
+}
+
+.lighter {
+  font-weight: 100;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.btn-login {
+  /*    border: 1px solid red; */
+  cursor: pointer;
+}
+
+.btn-google .line {
+  border: 1px solid #4285F4;
+}
+
+.btn-facebook .line {
+  border: 1px solid #3b5998;
+}
+
+.center-wrapper {
+  display: inline-block;
+  height: 3em;
+  width: 3em;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  background-color: #3b5998;
+  color: white;
+}
+
+.google-color {
+  background-color: #4285F4;
+}
+
+.p1 {
+  padding-left: 1rem;
+  margin-left: -0.22rem;
+  width: 12rem;
+}
+
+.centerV {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%)
+}
+
+.centerHV {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.svg-wrap {
+  background-color: white;
+}
+
+.btn-login {
+  width: 15.3rem;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* 
+  
+  much easier with flexbox, if only...
+  .flex-container1 {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 17rem;
+    padding: 0.05rem;
+    border: 1px solid grey; 
+    
+  } */
+
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #1C2331!important;
+  }
+}
+
+.carousel, .carousel .carousel-inner, .carousel .carousel-inner .active, .carousel .carousel-inner .carousel-item, .view, body, html {
+  height: 100%
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, .2)
+}
+
+.page-footer, .top-nav-collapse {
+  background-color: #1C2331
+}
+
+@media only screen and (max-width:768px) {
+  .navbar {
+    background-color: #1C2331
+  }
+}
+
+
+/* Chart.js */
+
+@-webkit-keyframes chartjs-render-animation {
+  from {
+    opacity: 0.99
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes chartjs-render-animation {
+  from {
+    opacity: 0.99
+  }
+  to {
+    opacity: 1
+  }
+}
+
+.chartjs-render-monitor {
+  -webkit-animation: chartjs-render-animation 0.001s;
+  animation: chartjs-render-animation 0.001s;
+}
+
+.alert{
+  top: 0;
+  z-index: 100000000000000000;
+}
