@@ -1,4 +1,4 @@
-var hostApi = "http://localhost:5001/cursos-cenfotec/us-central1/app/api/";
+var hostApi = "http://localhost:5000/cursos-cenfotec/us-central1/app/api/";
 
 class AjaxHelper {
 
@@ -9,7 +9,7 @@ class AjaxHelper {
                 'Content-Type': 'application/json;charset=UTF-8',
             }
         });
-        let result = await response.json();
+        let result = await response;
         return result;
     }
 
