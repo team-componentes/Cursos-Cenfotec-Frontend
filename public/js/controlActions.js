@@ -9,7 +9,7 @@ class AjaxHelper {
                 'Content-Type': 'application/json;charset=UTF-8',
             }
         });
-        let result = await response;
+        let result = await response.json();
         return result;
     }
 
@@ -25,7 +25,7 @@ class AjaxHelper {
         return result;
     }
 
-    async putMethod(data) {
+    async putMethod(url, data) {
         let response = await fetch(hostApi + url, {
             method: "PUT",
             headers: {
@@ -37,12 +37,13 @@ class AjaxHelper {
         return result;
     }
 
-    async  deleteMethod() {
+    async  deleteMethod(url, data) {
         let response = await fetch(hostApi + url, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
-            }
+            },
+            body: JSON.stringify(data)
         });
         let result = await response.json();
         return result;

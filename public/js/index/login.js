@@ -27,6 +27,7 @@
             var data = await ajaxHelper.getMethod("users/email/" + user.email);
     
             if (data.length > 0) {
+                localStorage.setItem("actualUser", JSON.stringify(data[0]));
                 if(data[0].user_type === "Student"){
                     window.location.href = "http://localhost:3000/carrers.html";
                 }
