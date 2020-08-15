@@ -59,47 +59,42 @@
     var olTemplate = '<li data-target="#multi-item-example" data-slide-to="#Number"></li>';
 
     let getMyCareers = async () => {
-        var htmlCareers = [];
-        var pagination = "";
-        var studentCareer = await ajaxHelper.getMethod("student_career/" + user.id);
-        if (studentCareer) {
-            var careers = studentCareer.careers;
-            var ids = careers.map(x => x.id).join(",");
-            for (let i = 0; i < careers.length; i++) {
-                let htmlCareer = templateCard.replace("#Percentile", "0%")
-                    .replace("#CareerId", careers[i].id)
-                    .replace("#CareerName", `${careers[i].name} (${careers[i].id})`);
-                htmlCareers.push(htmlCareer);
-                pagination += olTemplate.replace("#Number", i);
-            }
-            var careerCourses = await ajaxHelper.getMethod("career_course/" + ids);
-            if (careerCourses) {
-                for (let i = 0; i < careerCourses.length; i++) {
-                    let htmlCourse = "";
-                    let courses = careerCourses[i].courses;
-                    for (let j = 0; j < courses.length; j++) {
-                        htmlCourse += courseTemplate.replace("#CourseCareerId", `${courses[j].id}|${careerCourses[i].career.id}`)
-                            .replace("#CourseCareerId", `${courses[j].id}|${careerCourses[i].career.id}`)
-                            .replace("#CourseId", courses[j].id)
-                            .replace("#CourseName", courses[j].name);
-                    }
-                    htmlCareers[i] = htmlCareers[i].replace("#CoursesTemplate", htmlCourse);
-                }
-                var totalHTML = htmlCareers.join("");
-                document.querySelector(".carousel-inner").innerHTML = totalHTML;
-                document.querySelector(".carousel-indicators").innerHTML = pagination;
-                document.querySelector("[data-slide-to='0']").classList.add("active");
-                document.querySelector("[data-career]").classList.add("active");
-                var spinner = document.querySelector("#spinner");
-                spinner.remove();
-                document.querySelector("#multi-item-example").style.display = "";
-                $('.carousel').carousel({
-                    wrap: false
-                });
-                getMyCompletedCarrers();
-                document.querySelectorAll("input[type='checkbox']").forEach(x=>x.addEventListener("change",handlerOnChangeEventCheckBox));
-            }
-        }
+      var htmlCareers = [];
+      var pagination = "";
+      var studentCareer = await ajaxHelper.getMethod("student_career/complete/" + user.id);
+      if (studentCareer) {
+          var careers = studentCareer.careers;
+          for (let i = 0; i < careers.length; i++) {
+              let htmlCareer = templateCard.replace("#Percentile", "0%")
+                  .replace("#CareerId", careers[i].id)
+                  .replace("#CareerName", `${careers[i].name} (${careers[i].id})`);
+              htmlCareers.push(htmlCareer);
+              pagination += olTemplate.replace("#Number", i);
+
+              let htmlCourse = "";
+                  let courses = careers[i].courses;
+                  for (let j = 0; j < courses.length; j++) {
+                      htmlCourse += courseTemplate.replace("#CourseCareerId", `${courses[j].id}|${careers[i].id}`)
+                          .replace("#CourseCareerId", `${courses[j].id}|${careers[i].id}`)
+                          .replace("#CourseId", courses[j].id)
+                          .replace("#CourseName", courses[j].name);
+                  }
+                  htmlCareers[i] = htmlCareers[i].replace("#CoursesTemplate", htmlCourse);
+          }
+          var totalHTML = htmlCareers.join("");
+          document.querySelector(".carousel-inner").innerHTML = totalHTML;
+          document.querySelector(".carousel-indicators").innerHTML = pagination;
+          document.querySelector("[data-slide-to='0']").classList.add("active");
+          document.querySelector("[data-career]").classList.add("active");
+          var spinner = document.querySelector("#spinner");
+          spinner.remove();
+          document.querySelector("#multi-item-example").style.display = "";
+          $('.carousel').carousel({
+              wrap: false
+          });
+          getMyCompletedCarrers();
+          document.querySelectorAll("input[type='checkbox']").forEach(x=>x.addEventListener("change",handlerOnChangeEventCheckBox));
+      }
     };
 
     let getMyCompletedCarrers = async () => {
