@@ -4,7 +4,7 @@ class careerAdmin {
   helper = new AjaxHelper();
 
   fill = function (reload) {
-    this.helper.fillTable("careers", "createCareer", "courseAdmin", this.idTabla, reload , true)
+    this.helper.fillTable("careers", "createCareer", "courseAdmin", this.idTabla, reload, true)
   }
 
   delete = async function () {
@@ -27,4 +27,9 @@ $(document).ready(async () => {
     sessionStorage.setItem('carrer-selected', JSON.stringify(data));
   });
   document.querySelector("#success").addEventListener("click", careerAdm.delete.bind(careerAdm));
+
+  document.querySelector("#crear").addEventListener("click", function () {
+    sessionStorage.clear();
+    window.location.href = "createCareer.html"
+  });
 });

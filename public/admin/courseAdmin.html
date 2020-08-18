@@ -42,21 +42,20 @@
 
 
     <div class="container p-5">
+        <button id="crear" type="button" class="btn btn-primary">Crear</button>
         <div class="card">
             <div class="card-header">
                 Carreras
 
             </div>
             <div class="card-body">
-                <table id="tblCarreras" class="display" cellspacing="0" width="100%">
+                <table id="tblCursos" class="display" cellspacing="0" width="100%" ColumnsDataName="id,name,credits,cost">
                     <thead>
                         <tr>
-                            <th class="th-sm">ID</th>
                             <th class="th-sm">Código</th>
                             <th class="th-sm">Nombre</th>
                             <th class="th-sm">Créditos</th>
                             <th class="th-sm">Costo</th>
-                            <th class="th-sm">Cuatrimestre</th>
                             <th class="th-sm">Acciones</th>
                         </tr>
                     </thead>
@@ -67,68 +66,35 @@
         </div>
     </div>
 
-    <div class="container w-50">
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Borrar</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3" id="-#ModalFormId-">
 
-        <div class="card">
-            <!-- Default form contact -->
-            <form class="text-center p-5" action="#!">
-
-                <p class="h4 mb-4">Cursos</p>
-
-                <!-- Codigo -->
-                <input type="text" id="txtCodigo" class="form-control mb-4" placeholder="Código">
-
-                <!-- Nombre -->
-                <input type="text" id="txtNombre" class="form-control mb-4" placeholder="Nombre">
-
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <!-- Créditos -->
-                        <label for="selCreditos">Créditos</label>
-                        <select id="selCreditos" class="browser-default custom-select mb-4">
-                            <option value="" disabled>Elija una opción</option>
-                            <option value="1" selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-6">
-                        <!-- Cuatrimestre -->
-                        <label for="selCuatrimestre">Cuatrimestre</label>
-                        <select id="selCuatrimestre" class="browser-default custom-select mb-4">
-                            <option value="" disabled>Elija una opción</option>
-                            <option value="1" selected>Primero</option>
-                            <option value="2">Segundo</option>
-                            <option value="3">Tercero</option>
-                            <option value="4">Cuarto</option>
-                            <option value="5">Quinto</option>
-                            <option value="6">Sexto</option>
-                            <option value="7">Sétimo</option>
-                            <option value="8">Octavo</option>
-                            <option value="9">Noveno</option>
-                        </select>
-                    </div>
+                    <p>¿Seguro que quiere borrarlo?</p>
                 </div>
 
-                <label for="selCarrera">Carrera</label>
-                <select id="selCarrera" class="browser-default custom-select mb-4">
-                    <option value="" disabled selected>Elija una opción</option>
-                </select>
+                <div class="modal-footer d-flex justify-content-center">
 
-                <!-- Costo -->
-                <input type="number" min="1000" max="1000000" id="txtCosto" class="form-control mb-4"
-                    placeholder="Costo">
+                    <button type="button" id="success" class="btn btn-primary waves-effect waves-light"
+                        style="margin-left: 5px; margin-right: 5px;" data-dismiss="modal">Borrarlo</button>
 
-                <!-- Send button -->
-                <button class="btn btn-info btn-block" type="submit">Enviar</button>
+                    <button type="button" id="cancel" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">
+                        Cancelar</button>
 
-            </form>
+                </div>
+            </div>
         </div>
-
     </div>
+
+
+    
     <!-- Default form contact -->
     <!-- Default form login -->
 
