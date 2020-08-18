@@ -4,7 +4,8 @@ class courseAdmin {
     helper = new AjaxHelper();
 
     fill = function (reload) {
-        this.helper.fillTable(this.service, "createCourse", "#", this.idTabla, reload, true)
+        var defaultContent = '<a href="createCourse.html"><i class="far fa-edit fa-lg"></i></a> <a href="#" data-toggle="modal" data-target="#deleteModal"><i class="far fa-trash-alt fa-lg"></i></a>';
+        this.helper.fillTable(this.service, defaultContent, this.idTabla, reload)
     }
 
     delete = async function () {

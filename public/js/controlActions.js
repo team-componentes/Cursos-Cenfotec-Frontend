@@ -49,7 +49,7 @@ class AjaxHelper {
         return result;
     }
 
-    fillTable = function (service, editarView, goToView, tableId, refresh, addButtuons) {
+    fillTable = function (service, defaultContent, tableId, refresh, dataSrc = '') {
 
 		if (!refresh) {
 			//Obtiene las columnas de la tabla
@@ -64,13 +64,11 @@ class AjaxHelper {
 			});
 
 			//Condicional que determina los botones de accion por agregar si el usuario es Administrador.  Agregar Editar, eliminar y activar/desactivar
-			if (addButtuons) {
-
+			if (defaultContent) {
 				var actionColumn = {};
 				actionColumn.data = null;
 				actionColumn.className = "text-center";
-				actionColumn.defaultContent = '<a href="'+ editarView +'.html"><i class="far fa-edit fa-lg"></i></a> <a href="#" data-toggle="modal" data-target="#deleteModal"><i class="far fa-trash-alt fa-lg"></i></a> <a href="'+ goToView +'.html"><i class="far fa-eye fa-lg"></i></a>';
-
+				actionColumn.defaultContent = defaultContent;
 				arrayColumnsData.push(actionColumn);
 			}
 
@@ -80,7 +78,7 @@ class AjaxHelper {
 				"processing": true,
 				"ajax": {
 					"url": hostApi + service,
-					dataSrc: ''
+					dataSrc: dataSrc
 				},
 				"columns": arrayColumnsData
 			});

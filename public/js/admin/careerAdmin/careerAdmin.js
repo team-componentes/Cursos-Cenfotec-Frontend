@@ -4,7 +4,8 @@ class careerAdmin {
   helper = new AjaxHelper();
 
   fill = function (reload) {
-    this.helper.fillTable("careers", "createCareer", "courseAdmin", this.idTabla, reload, true)
+    var defaultContent = '<a href="createCareer.html"><i class="far fa-edit fa-lg"></i></a> <a href="#" data-toggle="modal" data-target="#deleteModal"><i class="far fa-trash-alt fa-lg"></i></a> <a href="careerCourseAdmin.html"><i class="far fa-eye fa-lg"></i></a>';
+    this.helper.fillTable(this.service, defaultContent, this.idTabla, reload)
   }
 
   delete = async function () {
@@ -12,7 +13,7 @@ class careerAdmin {
     var data = {
       id: carrer.id
     }
-    var results = await this.helper.deleteMethod("careers", data);
+    var results = await this.helper.deleteMethod(this.service, data);
     this.fill(true);
   }
 }

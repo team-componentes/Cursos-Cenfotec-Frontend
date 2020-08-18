@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/compiled-4.14.1.min.css">
+    <!-- MDBootstrap Datatables  -->
+    <link href="../css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a href="../" class="navbar-brand">Exchange Rates</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Exchange Rate
+                            <span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="ExchangeRates">
+
+                        </div>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Andres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container p-5">
+        <button id="crear" type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Agregar curso</button>
+        <div class="card">
+            <div class="card-header">
+                Carreras
+
+            </div>
+            <div class="card-body">
+                <table id="tblCursos" class="display" cellspacing="0" width="100%" ColumnsDataName="id,name,credits,cost">
+                    <thead>
+                        <tr>
+                            <th class="th-sm">Código</th>
+                            <th class="th-sm">Nombre</th>
+                            <th class="th-sm">Créditos</th>
+                            <th class="th-sm">Costo</th>
+                            <th class="th-sm">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Borrar</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3" id="-#ModalFormId-">
+
+                    <p>¿Seguro que quiere borrarlo?</p>
+                </div>
+
+                <div class="modal-footer d-flex justify-content-center">
+
+                    <button type="button" id="success" class="btn btn-primary waves-effect waves-light"
+                        style="margin-left: 5px; margin-right: 5px;" data-dismiss="modal">Borrarlo</button>
+
+                    <button type="button" id="cancel" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">
+                        Cancelar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Borrar</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3" id="selectModalForm">
+
+                    <div class="col-md-12 form-group" data-container-course>
+                        
+                        <label class="mdb-main-label label">Cursos</label>
+                        <div class="messages"></div>
+                    </div>
+                </div>
+
+                <div class="modal-footer d-flex justify-content-center">
+
+                    <button type="button" id="success" class="btn btn-primary waves-effect waves-light"
+                        style="margin-left: 5px; margin-right: 5px;" data-dismiss="modal">Guardar</button>
+
+                    <button type="button" id="cancel" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">
+                        Cancelar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Default form contact -->
+    <!-- Default form login -->
+
+    <script src="/js/controlActions.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/compiled.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <!-- MDBootstrap Datatables  -->
+    <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+    <!-- JS concreto -->
+    <script src="/js/admin/careerCourseAdmin/careerCourseAdmin.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script> -->
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+</body>
+
+</html>
