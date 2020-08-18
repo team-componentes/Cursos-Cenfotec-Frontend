@@ -48,10 +48,9 @@
 
             </div>
             <div class="card-body">
-                <table id="tblCarreras" class="display" cellspacing="0" width="100%">
+                <table id="tblCarreras" class="display" cellspacing="0" width="100%" ColumnsDataName="id,name">
                     <thead>
                         <tr>
-                            <th class="th-sm">ID</th>
                             <th class="th-sm">Código</th>
                             <th class="th-sm">Nombre</th>
                             <th class="th-sm">Acciones</th>
@@ -64,27 +63,33 @@
         </div>
     </div>
 
-    <div class="container w-50">
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Borrar</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3" id="-#ModalFormId-">
 
-        <div class="card">
-            <!-- Default form contact -->
-            <form class="text-center p-5" action="#!">
+                    <p>¿Seguro que quiere borrarlo?</p>
+                </div>
 
-                <p class="h4 mb-4">Carreras</p>
+                <div class="modal-footer d-flex justify-content-center">
 
-                <!-- Codigo -->
-                <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Código">
+                    <button type="button" id="success" class="btn btn-primary waves-effect waves-light"
+                        style="margin-left: 5px; margin-right: 5px;" data-dismiss="modal">Borrarlo</button>
 
-                <!-- Nombre -->
-                <input type="text" id="defaultContactFormEmail" class="form-control mb-4" placeholder="Nombre">
+                    <button type="button" id="cancel" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">
+                        Cancelar</button>
 
-                <!-- Send button -->
-                <button class="btn btn-info btn-block" type="submit">Enviar</button>
-
-            </form>
+                </div>
+            </div>
         </div>
-
     </div>
+
     <!-- Default form contact -->
     <!-- Default form login -->
 
