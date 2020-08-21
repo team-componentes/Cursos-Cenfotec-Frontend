@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/compiled-4.14.1.min.css">
+    <!-- MDBootstrap Datatables  -->
+    <link href="../css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container w-50">
+
+        <div class="card">
+            <!-- Default form contact -->
+            <form class="text-center p-5" action="#!">
+
+                <p class="h4 mb-4">Cursos</p>
+
+                <!-- Codigo -->
+                <input type="text" id="txtCedula" class="form-control mb-4" placeholder="Cédula">
+
+                <!-- Nombre -->
+                <input type="text" id="txtNombre" class="form-control mb-4" placeholder="Nombre">
+
+                <input type="text" id="txtApellido" class="form-control mb-4" placeholder="Apellido">
+
+                <input type="text" id="txtSegundoApellido" class="form-control mb-4" placeholder="Segundo Apellido">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Créditos -->
+                        <label for="userType">Tipo de usuario</label>
+                        <select id="userType" class="browser-default custom-select mb-4">
+                            <option value="" disabled>Elija una opción</option>
+                            <option value="Student" selected>Estudiante</option>
+                            <option value="Admin">Administrador</option>
+                        </select>
+                    </div>
+                </div>
+
+                <input type="text" id="txtEmail" class="form-control mb-4" placeholder="Correo eléctronico">
+
+                <input type="text" id="txtCodigo" class="form-control mb-4" placeholder="Código de la universidad">
+
+                <!-- Send button -->
+                <button id="create" class="btn btn-info btn-block" type="button">Enviar</button>
+
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Default form contact -->
+    <!-- Default form login -->
+
+    <script src="/js/controlActions.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/compiled.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    
+    <!-- JS concreto -->
+    <script src="/js/admin/userAdmin/create.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script> -->
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+</body>
+
+</html>
