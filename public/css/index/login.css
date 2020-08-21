@@ -147,3 +147,9 @@ body strong {
   top: 0;
   z-index: 100000000000000000;
 }
+
+.banner-border{
+  border-radius: 10px;
+  border: 2px solid white;
+  padding: 5%;
+}

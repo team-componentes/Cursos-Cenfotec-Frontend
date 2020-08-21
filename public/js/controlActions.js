@@ -1,4 +1,4 @@
-var hostApi = "http://localhost:5000/cursos-cenfotec/us-central1/app/api/";
+var hostApi = "https://us-central1-cursos-cenfotec.cloudfunctions.net/app/api/";
 
 class AjaxHelper {
 
