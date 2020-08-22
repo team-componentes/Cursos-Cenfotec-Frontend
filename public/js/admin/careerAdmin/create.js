@@ -5,13 +5,14 @@
     var update = false;
     let create = async () =>{
         var data = {
-            code: code.value,
             name: name.value
         };
         if(!update){
+            data.code = code.value;
             var response = await ajaxHelper.postMethod("careers", data);
         }
         else{
+            data.id = code.value;
             var response = await ajaxHelper.putMethod("careers", data);
         }
         
