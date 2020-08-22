@@ -5,7 +5,7 @@
     var update = false;
     let create = async () =>{
         var data = {
-            id: code.value,
+            code: code.value,
             name: name.value
         };
         if(!update){
