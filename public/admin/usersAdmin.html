@@ -4,48 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cursos Cenfotec</title>
     <script src="/js/adminAuth.js"></script>
     <link rel="stylesheet" href="/css/compiled-4.14.1.min.css">
     <!-- MDBootstrap Datatables  -->
     <link href="../css/jquery.dataTables.min.css" rel="stylesheet">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 </head>
 
 <body>
 
-    <button id="signOut">Cerrar Sesión</button>
-
-    <div class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary deep-purple darken-4">
         <div class="container">
-            <a href="../" class="navbar-brand">Exchange Rates</a>
+            <a href="../admin/admin.html" class="navbar-brand">Cursos Cenfotec</a>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Exchange Rate
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Recursos
                             <span class="caret"></span></a>
-                        <div class="dropdown-menu" aria-labelledby="ExchangeRates">
-
-                        </div>
+                            <div class="dropdown-menu" aria-labelledby="CursosCenfotec">
+                                <a class="dropdown-item" href="../admin/careerAdmin.html">Carreras</a>
+                                <a class="dropdown-item" href="../admin/courseAdmin.html">Cursos</a>
+                                <a class="dropdown-item" href="../admin/usersAdmin.html">Usuarios</a>
+                            </div>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Andres</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Log out</a>
+                        <a class="nav-link" href="#" id="signOut">Cerrar Sesión</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </div>
+    </nav>
 
 
     <div class="container p-5">
-        <button id="crear" type="button" class="btn btn-primary">Crear</button>
+        <button id="crear" type="button" class="btn btn-deep-purple">Crear</button>
         <div class="card">
             <div class="card-header">
                 Usuarios
