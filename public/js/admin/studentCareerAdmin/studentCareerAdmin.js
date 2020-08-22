@@ -7,7 +7,7 @@ class StudentCareerAdmin {
     fill = function (reload) {
         var user = JSON.parse(sessionStorage.getItem("user-selected"));
         var defaultContent = '<a href="#" data-toggle="modal" data-target="#deleteModal"><i class="far fa-trash-alt fa-lg"></i></a>';
-        var url = this.service + "/" + carrer.id;
+        var url = this.service + "/" + user.id;
         this.helper.fillTable(url, defaultContent, this.idTabla, reload, "careers")
     }
 
@@ -17,8 +17,8 @@ class StudentCareerAdmin {
     }
 
     createOptions = (response) => {
-        var containerSelectCourses = document.querySelector("[data-container-career]");
-        containerSelectCourses.innerHTML = `<select class="mdb-select validate md-form" searchable="Buscar" id="career" name="career"><option value="" disabled selected>Seleccione una opción</option></select>`
+        var containerSelectCareers = document.querySelector("[data-container-career]");
+        containerSelectCareers.innerHTML = `<select class="mdb-select validate md-form" searchable="Buscar" id="career" name="career"><option value="" disabled selected>Seleccione una opción</option></select>`
         var select = document.querySelector("#career");
         for(var  i = 0; i < response.length; i++){
             var option = document.createElement("option");
@@ -30,10 +30,10 @@ class StudentCareerAdmin {
     }
 
     delete = async function () {
-        var studentCarrer = JSON.parse(sessionStorage.getItem("student-carrer-selected"));
+        var studentCareer = JSON.parse(sessionStorage.getItem("student-career-selected"));
         var data = {
-            studentId: JSON.parse(sessionStorage.getItem("student-selected")).id,
-            careerId: studentCarrer.id
+            studentId: JSON.parse(sessionStorage.getItem("user-selected")).id,
+            careerId: studentCareer.id
         }
         var results = await this.helper.deleteMethod(this.service, data);
         this.fill(true);
@@ -41,8 +41,8 @@ class StudentCareerAdmin {
 
     save = async () => {
         var data = {
-            careerId: JSON.parse(sessionStorage.getItem("student-selected")).id,
-            courseId: document.querySelector("#carrer").value
+            studentId: JSON.parse(sessionStorage.getItem("user-selected")).id,
+            careerId: document.querySelector("#career").value
         }
         var response = await this.helper.postMethod(this.service, data);
         this.fill(true);
@@ -58,7 +58,7 @@ $(document).ready(async () => {
     var table = $('#tblCareers').DataTable();
     $('#tblCareers tbody').on('click', 'tr', function () {
         var data = table.row(this).data();
-        sessionStorage.setItem('student-carrer-selected', JSON.stringify(data));
+        sessionStorage.setItem('student-career-selected', JSON.stringify(data));
     });
     document.querySelector("#deleteModal #success").addEventListener("click", studentCareerAdmin.delete.bind(studentCareerAdmin));
     document.querySelector("#createModal #success").addEventListener("click", studentCareerAdmin.save.bind(studentCareerAdmin));
