@@ -29,10 +29,10 @@
             if (data.length > 0) {
                 localStorage.setItem("actualUser", JSON.stringify(data[0]));
                 if(data[0].user_type === "Student"){
-                    window.location.href = "http://localhost:3000/careers.html";
+                    window.location.href = window.location.origin + "/careers.html";
                 }
                 else{
-                    window.location.href = "http://localhost:3000/admin/admin.html";
+                    window.location.href = window.location.origin + "/admin/admin.html";
                 }
             }
             else {
