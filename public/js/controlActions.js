@@ -80,7 +80,7 @@ class AjaxHelper {
 					"url": hostApi + service,
 					dataSrc: dataSrc
 				},
-				"columns": arrayColumnsData
+                "columns": arrayColumnsData
 			});
 		} else {
 			//RECARGA LA TABLA

@@ -5,7 +5,7 @@
     var templateCard = `<div class="carousel-item" data-career="#CareerId">
 
     <div class="d-flex justify-content-center">
-      <div class="card card-cascade narrower">
+      <div class="card card-cascade narrower w-75">
         <div
           class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
 
@@ -90,7 +90,8 @@
           spinner.remove();
           document.querySelector("#multi-item-example").style.display = "";
           $('.carousel').carousel({
-              wrap: false
+              wrap: false,
+              pause: true
           });
           getMyCompletedCarrers();
           document.querySelectorAll("input[type='checkbox']").forEach(x=>x.addEventListener("change",handlerOnChangeEventCheckBox));

@@ -10,13 +10,41 @@
     <link href="../css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary deep-purple darken-4">
+        <div class="container">
+            <a href="../admin/admin.html" class="navbar-brand">Cursos Cenfotec</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Recursos
+                            <span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="ExchangeRates">
+                            <a class="dropdown-item" href="../admin/careerAdmin.html">Carreras</a>
+                            <a class="dropdown-item" href="../admin/courseAdmin.html">Cursos</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="signOut">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container w-50">
 
-        <div class="card">
+        <div class="card mt-5">
             <!-- Default form contact -->
             <form class="text-center p-5" action="#!">
 
-                <p class="h4 mb-4">Carreras</p>
+                <p class="h4 mb-4">Crear carrera</p>
 
                 <!-- Codigo -->
                 <input type="text" id="code" class="form-control mb-4" placeholder="Código">
@@ -25,8 +53,8 @@
                 <input type="text" id="name" class="form-control mb-4" placeholder="Nombre">
 
                 <!-- Send button -->
-                <button id="create" class="btn btn-info btn-block" type="button">Enviar</button>
-
+                <button id="create" class="btn btn-deep-purple btn-block mb-3" type="button">Enviar</button>
+                <a href="../admin/careerAdmin.html" class="purple-text">Volver</a>
             </form>
         </div>
 

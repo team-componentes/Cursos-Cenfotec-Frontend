@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/compiled-4.14.1.min.css">
+    <link rel="stylesheet" href="../css/admin/admin.css">
     <!-- MDBootstrap Datatables  -->
     <link href="../css/jquery.dataTables.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 </head>
-
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary deep-purple darken-4">
         <div class="container">
             <a href="../admin/admin.html" class="navbar-brand">Cursos Cenfotec</a>
@@ -42,70 +39,21 @@
             </div>
         </div>
     </nav>
+    <div class="container w-50 mt-5 h-100" >
 
-
-    <div class="container p-5">
-        <button id="crear" type="button" class="btn btn-deep-purple">Crear</button>
-        <div class="card">
-            <div class="card-header">
-                Carreras
-            </div>
-            <div class="card-body">
-                <table id="tblCarreras" class="display" cellspacing="0" width="100%" ColumnsDataName="id,name">
-                    <thead>
-                        <tr>
-                            <th class="th-sm">Código</th>
-                            <th class="th-sm">Nombre</th>
-                            <th class="th-sm">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
+        <div class="text-center">
+            <h1>Cursos Cenfotec</h1>
+            <p>Panel de administrador miedo</p>
         </div>
-    </div>
 
-    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Borrar</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body mx-3" id="-#ModalFormId-">
-
-                    <p>¿Seguro que quiere borrarlo?</p>
-                </div>
-
-                <div class="modal-footer d-flex justify-content-center">
-
-                    <button type="button" id="success" class="btn btn-primary waves-effect waves-light"
-                        style="margin-left: 5px; margin-right: 5px;" data-dismiss="modal">Borrarlo</button>
-
-                    <button type="button" id="cancel" class="btn btn-secondary waves-effect waves-light"
-                        data-dismiss="modal">
-                        Cancelar</button>
-
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Default form contact -->
     <!-- Default form login -->
 
-    <script src="/js/controlActions.js"></script>
-    <script src="/js/jquery.min.js"></script>
     <script src="/js/compiled.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
-    <!-- MDBootstrap Datatables  -->
-    <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
-    <!-- JS concreto -->
-    <script src="/js/admin/careerAdmin/careerAdmin.js"></script>
+    
     <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script> -->
 
