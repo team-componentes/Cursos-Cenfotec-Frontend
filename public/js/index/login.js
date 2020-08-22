@@ -38,6 +38,7 @@
             else {
                 $('.alert').alert();
                 document.querySelector('.alert').style.top = "-89%";
+                document.querySelector('.alert').style.display = ""
             }
         }).catch(function (error) {
             console.log(error);
